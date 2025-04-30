@@ -1,10 +1,10 @@
 package com.example.mgt_smartautopark_educationblock;
 
-public class Video {
+public class VideoModel {
     private String title;
     private String description;
 
-    public Video(String title, String description) {
+    public VideoModel(String title, String description) {
         this.title = title;
         this.description = description;
     }

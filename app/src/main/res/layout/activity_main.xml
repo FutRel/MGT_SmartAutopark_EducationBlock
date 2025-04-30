@@ -6,21 +6,6 @@
               android:orientation="vertical"
               tools:context=".MainActivity">
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/purple_500"
-            android:padding="10dp"
-            android:orientation="vertical">
-
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Система входа"
-                android:textColor="@android:color/white"
-                android:textSize="24sp"
-                android:textStyle="bold"/>
-    </LinearLayout>
-    <LinearLayout
             android:id="@+id/normal_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,6 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Войти"
+                android:backgroundTint="@color/blue"
                 android:layout_marginTop="16dp"/>
     </LinearLayout>
 
@@ -101,6 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:text="Войти как администратор"
+            android:backgroundTint="@color/blue"
             android:layout_marginTop="8dp"/>
 
     <!-- Форма для админского входа -->
@@ -153,6 +140,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Обычный вход"
+                android:backgroundTint="@color/blue"
                 android:layout_marginTop="8dp"/>
     </LinearLayout>
 

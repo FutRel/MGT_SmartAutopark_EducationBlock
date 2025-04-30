@@ -10,9 +10,9 @@ import java.util.List;
 
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder> {
 
-    private List<Video> videoList;
+    private List<VideoModel> videoList;
 
-    public VideoAdapter(List<Video> videoList) {
+    public VideoAdapter(List<VideoModel> videoList) {
         this.videoList = videoList;
     }
 
@@ -25,7 +25,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 
     @Override
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
-        Video video = videoList.get(position);
+        VideoModel video = videoList.get(position);
         holder.videoTitle.setText(video.getTitle());
         holder.videoDescription.setText(video.getDescription());
     }

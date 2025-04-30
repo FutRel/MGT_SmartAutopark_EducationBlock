@@ -1,9 +1,12 @@
 package com.example.mgt_smartautopark_educationblock;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,13 +38,47 @@ public class MainActivity extends AppCompatActivity {
             switchToAdminButton.setVisibility(View.VISIBLE);
         });
 
-        // Обработчики для кнопок входа
-        findViewById(R.id.normal_login_button).setOnClickListener(v -> {
-            // Интент обычного входа
+        findViewById(R.id.normal_login_button).setOnClickListener(v -> { // Обработчик для обычного входа
+            EditText lastNameInput = findViewById(R.id.last_name_input);
+            EditText firstNameInput = findViewById(R.id.first_name_input);
+            EditText middleNameInput = findViewById(R.id.middle_name_input);
+            EditText employeeIdInput = findViewById(R.id.employee_id_input);
+
+            String lastName = lastNameInput.getText().toString().trim();
+            String firstName = firstNameInput.getText().toString().trim();
+            String middleName = middleNameInput.getText().toString().trim();
+            String employeeId = employeeIdInput.getText().toString().trim();
+
+            if (lastName.isEmpty() || firstName.isEmpty() || middleName.isEmpty() || employeeId.isEmpty()) {
+                Toast.makeText(this, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Intent intent = new Intent(this, VideoListActivity.class);
+            intent.putExtra("lastName", lastName);
+            intent.putExtra("firstName", firstName);
+            intent.putExtra("middleName", middleName);
+            intent.putExtra("employeeId", employeeId);
+            startActivity(intent);
         });
 
-        findViewById(R.id.admin_login_button).setOnClickListener(v -> {
-            // Интент админского входа
+
+        findViewById(R.id.admin_login_button).setOnClickListener(v -> { // Обработчик для админского ахода
+            EditText adminLoginInput = findViewById(R.id.admin_login_input);
+            EditText adminPasswordInput = findViewById(R.id.admin_password_input);
+
+            String login = adminLoginInput.getText().toString().trim();
+            String password = adminPasswordInput.getText().toString().trim();
+
+            if (login.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Intent intent = new Intent(this, VideoListActivity.class);
+            intent.putExtra("login", login);
+            intent.putExtra("password", password);
+            startActivity(intent);
         });
     }
 }
