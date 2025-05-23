@@ -1,147 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              tools:context=".MainActivity">
-    <LinearLayout
-            android:id="@+id/normal_login_form"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            tools:context=".MainActivity"
+            android:background="@color/white">
 
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Фамилия"
-                android:textSize="16sp"
-                android:layout_marginBottom="4dp"/>
-
-        <EditText
-                android:id="@+id/last_name_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Введите фамилию"
-                android:inputType="textPersonName"/>
-
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Имя"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="4dp"/>
-
-        <EditText
-                android:id="@+id/first_name_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Введите имя"
-                android:inputType="textPersonName"/>
-
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Отчество"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="4dp"/>
-
-        <EditText
-                android:id="@+id/middle_name_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Введите отчество"
-                android:inputType="textPersonName"/>
-
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Табельный номер"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="4dp"/>
-
-        <EditText
-                android:id="@+id/employee_id_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Введите табельный номер"
-                android:inputType="number"/>
-
-        <Button
-                android:id="@+id/normal_login_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Войти"
-                android:backgroundTint="@color/blue"
-                android:layout_marginTop="16dp"/>
-    </LinearLayout>
-
-    <!-- Кнопка переключения на админский вход -->
-    <Button
-            android:id="@+id/switch_to_admin_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:text="Войти как администратор"
-            android:backgroundTint="@color/blue"
-            android:layout_marginTop="8dp"/>
-
-    <!-- Форма для админского входа -->
     <LinearLayout
-            android:id="@+id/admin_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp"
-            android:visibility="gone">
+            android:gravity="center_horizontal">
 
-        <TextView
+        <!-- Логотипы -->
+        <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Логин"
-                android:textSize="16sp"
-                android:layout_marginBottom="4dp"/>
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
 
-        <EditText
-                android:id="@+id/admin_login_input"
+            <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/logo"
+                    android:contentDescription="Логотип"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" android:id="@+id/imageView2"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Войдите в аккаунт"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                    app:layout_constraintStart_toStartOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Обычная форма -->
+        <LinearLayout
+                android:id="@+id/normal_login_form"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Введите логин"
-                android:inputType="text"/>
+                android:orientation="vertical">
 
-        <TextView
+            <EditText
+                    android:id="@+id/last_name_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Фамилия"
+                    android:inputType="textPersonName"
+                    android:layout_marginVertical="10dp"/>
+
+            <EditText
+                    android:id="@+id/first_name_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Имя"
+                    android:inputType="textPersonName"
+                    android:layout_marginVertical="10dp"/>
+
+            <EditText
+                    android:id="@+id/middle_name_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Отчество"
+                    android:inputType="textPersonName"
+                    android:layout_marginVertical="10dp"/>
+
+            <EditText
+                    android:id="@+id/employee_id_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Табельный номер"
+                    android:inputType="number"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginBottom="16dp" />
+
+            <Button
+                    android:id="@+id/switch_to_admin_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Войти как администратор"
+                    android:background="@drawable/blue_unfill_button"
+                    android:textColor="#0079FF"
+                    android:layout_marginVertical="20dp"/>
+
+            <Button
+                    android:id="@+id/normal_login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Войти в аккаунт"
+                    android:background="@drawable/blue_fill_button"
+                    android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Админская форма -->
+        <LinearLayout
+                android:id="@+id/admin_login_form"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Пароль"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="4dp"/>
+                android:orientation="vertical"
+                android:visibility="gone">
 
-        <EditText
-                android:id="@+id/admin_password_input"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Введите пароль"
-                android:inputType="textPassword"/>
+            <EditText
+                    android:id="@+id/admin_login_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Логин"
+                    android:inputType="text"
+                    android:layout_marginVertical="16dp"/>
 
-        <Button
-                android:id="@+id/admin_login_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Войти как администратор"
-                android:layout_marginTop="16dp"/>
+            <EditText
+                    android:id="@+id/admin_password_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Пароль"
+                    android:inputType="textPassword"
+                    android:layout_marginVertical="10dp"/>
 
-        <Button
-                android:id="@+id/switch_to_normal_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Обычный вход"
-                android:backgroundTint="@color/blue"
-                android:layout_marginTop="8dp"/>
+            <Button
+                    android:id="@+id/admin_login_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Войти как администратор"
+                    android:background="@drawable/blue_fill_button"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginVertical="20dp"/>
+
+            <Button
+                    android:id="@+id/switch_to_normal_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Обычный вход"
+                    android:textColor="#0079FF"
+                    android:background="@drawable/blue_unfill_button"/>
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</ScrollView>
