@@ -95,7 +95,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Войти в аккаунт"
-                    android:background="@drawable/blue_fill_button"
+                    android:background="@drawable/rounded_button_selector"
                     android:textColor="#FFFFFF" />
         </LinearLayout>
 
@@ -128,7 +128,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Войти как администратор"
-                    android:background="@drawable/blue_fill_button"
+                    android:background="@drawable/rounded_button_selector"
                     android:textColor="#FFFFFF"
                     android:layout_marginVertical="20dp"/>
 
